@@ -61,7 +61,7 @@ class Vectoriser:
     def _forward_scale_map(self, key):
         min_val, max_val = self.ranges[key]
         if min_val == max_val:
-            return 0, min_val
+            return 0, 1
         return 2 / (max_val - min_val), -(min_val + max_val) / (max_val - min_val)
 
     def to_scaled_value(self, key, value):
